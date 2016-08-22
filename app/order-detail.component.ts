@@ -20,4 +20,8 @@ export class OrderDetailComponent implements OnInit {
   ngOnInit(): void {
     this.getCurrentOrder();
   }
+
+  onQuantityChange(newQuantity): void{
+    this.currentOrder.quantity = newQuantity;
+  }
 }
