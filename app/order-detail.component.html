@@ -1,0 +1,33 @@
+<div *ngIf="currentOrder" class="widget order" id="order_widget">
+   <h6 class="sectionHeader">
+      Your order
+   </h6>
+   <h5>{{currentOrder.productName}}</h5>
+   <img class="order_receipt_phone" src="{{currentOrder.imagePath}}" height="250" width="188" alt="">
+   <ul class="rowedList">
+      <li>
+         Quantity
+         <span class="detail">
+            <div class="selectmenu detailSelect">
+               <select name="quantity">
+                  <option value="1" selected="selected">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+               </select>
+            </div>
+            x ${{currentOrder.price}}
+         </span>
+      </li>
+      <li>
+         Subtotal
+         <span class="detail" id="order_total">        ${{currentOrder.subtotal()}}			</span>
+      </li>
+   </ul>
+</div>
