@@ -4,7 +4,7 @@ import { Order } from './models/app.order';
 import { OrderService } from './services/order.service';
 
 @Component({
-  selector: 'tingcom-order',
+  selector: 'tingcom-order-detail',
   templateUrl: 'app/order-detail.component.html',
   providers: [OrderService]
 })

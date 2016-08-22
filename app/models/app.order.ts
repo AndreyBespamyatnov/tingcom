@@ -14,6 +14,8 @@ export class Order {
       6,
       7,
       8,
+      9,
+      10
   ]; // Maximun of quantity
 
   constructor(id:number, productName:string, imagePath: string, price: number, quantity: number) {
