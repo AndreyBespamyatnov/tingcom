@@ -22,4 +22,9 @@ export class OrderServiceAddressComponent{
     let link = ['/order/cancel_order'];
     this.router.navigate(link);
   }
+
+  goBillingnfo(){
+    let link = ['/order/billing_info'];
+    this.router.navigate(link);
+  }
 }

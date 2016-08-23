@@ -52,7 +52,7 @@
 <modal #modal>
     <div id="modal-confirmAddress" class="popup flowForm" style="position: absolute; top: 295px; left: 711px;">
         <span class="close">
-            <button class="closeButton" type="button">
+            <button class="closeButton" type="button" (click)="modal.close()">
                 <svg height="16" width="16" role="img" title="Close" class="iconSvg">
                     <use xlink:href="/static/images/icons.svg#close" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/static/images/icons.svg#close"></use>
                 </svg>
@@ -66,7 +66,10 @@
             <div class="fieldgroup fullWide readonly"><label>City</label><span class="field">BELLEVUE</span></div>
             <div class="fieldgroup fullWide readonly"><label>State</label><span class="field">Washington</span></div>
             <div class="fieldgroup fullWide readonly"><label>Zip code</label><span class="field">98007-4967</span></div>
-            <div class="buttons"><button type="submit">Confirm</button><button type="button" name="cancel">This is not correct</button></div>
+            <div class="buttons">
+                <button type="button" (click)="goBillingnfo()">Confirm</button>
+                <button type="button" name="cancel" (click)="modal.open()">This is not correct</button>
+            </div>
         </form>
     </div>
 </modal>

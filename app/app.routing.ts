@@ -2,6 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { OrderLoginComponent }      from './order-login.component';
 import { OrderServiceAddressComponent }      from './order-service-address.component';
+import { EndDemoComponent }      from './end-demo.component';
 
 const appRoutes: Routes = [
   {
@@ -22,8 +23,8 @@ const appRoutes: Routes = [
   },
   {
     path: 'order/billing_info',
-    component: OrderServiceAddressComponent
-  }
+    component: EndDemoComponent
+  },
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);
