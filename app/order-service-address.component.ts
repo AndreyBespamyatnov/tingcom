@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewContainerRef, ViewEncapsulation } from '@angular/core';
+import { MODAL_DIRECTIVES } from 'ng2-bs3-modal/ng2-bs3-modal';
+
 import { Router } from '@angular/router';
 
 import { OrderServiceAddressControlService } from './services/order-service-address.service';
@@ -6,12 +8,13 @@ import { OrderServiceAddressControlService } from './services/order-service-addr
 @Component({
   selector: 'order-service-address',
   templateUrl: 'app/order-service-address.component.html',
-  providers:  [OrderServiceAddressControlService]
+  providers:  [OrderServiceAddressControlService],
+  directives: [MODAL_DIRECTIVES]
 })
 export class OrderServiceAddressComponent{
   controls: any[];
 
-  constructor(private service: OrderServiceAddressControlService, private router: Router){
+  constructor(private service: OrderServiceAddressControlService, private router: Router) {
     this.controls = service.getControls();
   }
 

@@ -16,7 +16,7 @@ import { OrderLoginComponent } from './order-login.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    routing
+    routing,
   ],
   declarations: [
     AppComponent,

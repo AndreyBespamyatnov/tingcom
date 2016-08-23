@@ -5,6 +5,10 @@ import { OrderServiceAddressComponent }      from './order-service-address.compo
 
 const appRoutes: Routes = [
   {
+    path: '',
+    component: OrderLoginComponent
+  },    
+  {
     path: 'order/login',
     component: OrderLoginComponent
   },
