@@ -5,7 +5,7 @@
                 <df-control *ngFor="let control of controls;"  [control]="control" [form]="form" [formSubmited]="formSubmited"></df-control>
             </fieldset>
             <div class="buttons">
-              <button type="submit" name="create_user_and_login" class="sign-up enabledSubmit" value="create_user_and_login">Sign up</button>
+              <button type="submit" name="create_user_and_login" class="sign-up enabledSubmit" value="create_user_and_login">{{submittext}}</button>
             </div>
         </section>
     </div>

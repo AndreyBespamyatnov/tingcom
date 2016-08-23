@@ -1,12 +1,19 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { OrderServiceAddressControlService } from './services/order-service-address.service';
+
 @Component({
   selector: 'order-service-address',
-  templateUrl: 'app/order-service-address.component.html'
+  templateUrl: 'app/order-service-address.component.html',
+  providers:  [OrderServiceAddressControlService]
 })
 export class OrderServiceAddressComponent{
-  constructor(private router: Router){}
+  controls: any[];
+
+  constructor(private service: OrderServiceAddressControlService, private router: Router){
+    this.controls = service.getControls();
+  }
 
   goBack(){
     let link = ['/order/cancel_order'];
