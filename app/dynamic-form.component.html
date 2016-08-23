@@ -1,11 +1,11 @@
-<form id="form-signup" class="section">
+<form (ngSubmit)="onSubmit()" [formGroup]="form" id="form-signup" class="section">
     <div class="loginContainer">
         <section class="formSection ">
             <fieldset>
-                <df-control *ngFor="let control of controls; let i = index"  [control]="control" [form]="form"></df-control>
+                <df-control *ngFor="let control of controls;"  [control]="control" [form]="form" [formSubmited]="formSubmited"></df-control>
             </fieldset>
             <div class="buttons">
-              <button type="submit" [disabled]="!form.valid" name="create_user_and_login" class="sign-up enabledSubmit" value="create_user_and_login">Sign up</button>
+              <button type="submit" name="create_user_and_login" class="sign-up enabledSubmit" value="create_user_and_login">Sign up</button>
             </div>
         </section>
     </div>

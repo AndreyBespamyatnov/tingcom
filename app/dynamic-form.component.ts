@@ -11,15 +11,17 @@ import { FormControlService }    from './services/form-control.service';
 export class DynamicFormComponent implements OnInit {
   @Input() controls: FormControlBase<any>[] = [];
   form: FormGroup;
+  formSubmited: boolean = false;
   payLoad = '';
 
-  constructor(private qcs: FormControlService) {  }
+  constructor(private fcs: FormControlService) {  }
   
   ngOnInit() {
-    this.form = this.qcs.toFormGroup(this.controls);
+    this.form = this.fcs.toFormGroup(this.controls);
   }
   
   onSubmit() {
+    this.formSubmited = true;
     this.payLoad = JSON.stringify(this.form.value);
   }
 }

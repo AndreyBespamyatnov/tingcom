@@ -22,7 +22,7 @@ export class FormControlBase<T>{
     this.label = options.label || '';
     this.required = !!options.required;
     this.order = options.order === undefined ? 1 : options.order;
-    this.fullWide = false;
+    this.fullWide = !!options.fullWide;
     this.controlType = options.controlType || '';
   }
 }

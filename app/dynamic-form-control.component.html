@@ -1,18 +1,34 @@
 <div [formGroup]="form">
-  <div [ngSwitch]="control.controlType" class="fieldgroup halfWide sign-up">
-    <label [attr.for]="control.key">{{control.label}}</label>
+
+   <label class="sign-up clear" *ngIf="control.controlType == 'checkboxgroup'" [attr.for]="control.key">{{control.label}}</label>
+   <div *ngIf="control.controlType == 'checkboxgroup'" class="fieldgroup fullWide sign-up email_news">
+       <label *ngFor="let ckbox of control.options;" class="checkbox">
+           <!--// TODO stire all chechboxes values-->
+           <input type="checkbox" [id]="control.key" [formControlName]="control.key" [value]="ckbox.key" checked="ckbox.value">{{ckbox.text}}
+       </label>
+   </div>
+
+  <div [ngSwitch]="control.controlType" [ngClass]="{halfWide: !control.fullWide, fullWide: control.fullWide, inline:control.fullWide}" class="fieldgroup sign-up">
+    
+    <label *ngIf="control.controlType == 'checkbox'" >
+        <input *ngSwitchCase="'checkbox'"  [formControlName]="control.key"
+            [id]="control.key" [type]="control.type"/>
+        {{control.label}}
+    </label>
+    
+    <label *ngIf="control.controlType == 'textbox'" [attr.for]="control.key">{{control.label}}</label>
 
     <input *ngSwitchCase="'textbox'"  [formControlName]="control.key"
             [id]="control.key" [type]="control.type">
 
-    <select [id]="control.key" *ngSwitchCase="'dropdown'" [formControlName]="control.key">
+    <select *ngSwitchCase="'dropdown'" [id]="control.key" [formControlName]="control.key">
       <option *ngFor="let opt of control.options" [value]="opt.key">{{opt.value}}</option>
     </select>
 
-    <div *ngIf="!isValid" id="advice-required-input_first_name" class="validation-advice" style="display: block;">This field is required.</div>
+    <div *ngIf="!isValid && formSubmited" id="advice-required-input_first_name" class="validation-advice" style="display: block;">This field is required.</div>
   </div> 
 </div>
-<div *ngIf="(control.order % 2 === 0) || (control.fullWide)" class="clear"></div>
+<div  *ngIf="control.order % 2 === 0" class="clear"></div>
 
 
 
