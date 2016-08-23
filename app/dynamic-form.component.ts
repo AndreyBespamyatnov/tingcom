@@ -38,7 +38,7 @@ export class DynamicFormComponent implements OnInit {
       this.goToServiceAddress();
     }
 
-    if(this.showmodal)
+    if(this.form.valid && this.showmodal)
     {
       this.modal.open();
     }
