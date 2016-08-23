@@ -49,6 +49,7 @@ export class SignupControlService {
         key: 'passwordField',
         label: 'Password',
         type: 'password',
+        minLength: 10,
         required: true,
         order: 7
       }),
@@ -56,6 +57,7 @@ export class SignupControlService {
         key: 'confirmPasswordField',
         label: 'Confirm password',
         type: 'password',
+        minLength: 10,
         required: true,
         order: 8
       }),
