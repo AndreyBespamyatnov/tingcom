@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FormControlBase }     from './form-control-base';
 
 @Component({
@@ -19,5 +20,13 @@ export class DynamicFormControlComponent {
     } 
 
     return this.form.controls[this.control.key].valid; 
+  }
+  
+  get showRequiredError() {
+    return this.form.controls[this.control.key].hasError('required') && this.formSubmited;
+  }
+
+  get showMinLenghtError() {
+    return !this.showRequiredError && this.form.controls[this.control.key].hasError('minlength') && this.formSubmited;
   }
 }

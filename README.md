@@ -1,2 +1,5 @@
-# tingcom
-// TODO
+# The 'tingcom' demo
+
+#1 run 'npm install'
+#2 run 'npm start'
+
