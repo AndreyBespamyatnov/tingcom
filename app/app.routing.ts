@@ -2,6 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { OrderLoginComponent }      from './order-login.component';
 import { OrderServiceAddressComponent }      from './order-service-address.component';
+import { ShopComponent }      from './shop.component';
 
 const appRoutes: Routes = [
   {
@@ -23,6 +24,10 @@ const appRoutes: Routes = [
   {
     path: 'order/billing_info',
     component: OrderServiceAddressComponent
+  },
+  {
+    path: 'order/shop',
+    component: ShopComponent
   }
 ];
 
