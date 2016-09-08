@@ -24,7 +24,7 @@ const appRoutes: Routes = [
   {
     path: 'order/billing_info',
     component: EndDemoComponent
-  },,
+  },
   {
     path: 'order/shop',
     component: ShopComponent
