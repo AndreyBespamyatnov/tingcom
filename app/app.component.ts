@@ -15,4 +15,14 @@ export class AppComponent implements OnInit {
     ngOnInit() {
         this.router.navigate(['order/login']);
     }
+
+    goToNewDemoPage(){
+        let link = ['/order/shop'];
+        this.router.navigate(link);
+    }
+
+    goToMainPage(){
+        let link = ['/order/login'];
+        this.router.navigate(link);
+    }
 }

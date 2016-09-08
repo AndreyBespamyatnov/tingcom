@@ -4,6 +4,7 @@ import { OrderLoginComponent }      from './order-login.component';
 import { OrderServiceAddressComponent }      from './order-service-address.component';
 import { EndDemoComponent }      from './end-demo.component';
 import { ShopComponent }      from './shop.component';
+
 const appRoutes: Routes = [
   {
     path: '',
