@@ -33,7 +33,9 @@
       <!--// TODO: main content-->
       <router-outlet></router-outlet>
 
-      <tingcom-order-detail></tingcom-order-detail>
+      <tingcom-order-detail *ngIf="showLeftBanner()"></tingcom-order-detail>
+
+
       <div class="clear"></div>
       <!-- mainBlock - end -->
    </div>

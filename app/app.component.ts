@@ -25,4 +25,8 @@ export class AppComponent implements OnInit {
         let link = ['/order/login'];
         this.router.navigate(link);
     }
+
+    showLeftBanner() {
+        return window.location.pathname != '/order/shop';
+    }
 }
